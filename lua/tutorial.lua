@@ -23,24 +23,36 @@ local content = {
     "`I` to insert text at the beginning of the line",
     "`v` to enter visual mode",
     "`V` to enter visual line mode",
+    "`o` to make a new line below the current line",
+    "`O` to make a new line above the current line",
     "`<C-v>` to enter visual block mode",
   },
-  ["insert"] = {
-    "`<Esc>` to exit insert mode",
-    "`<C-o>` to execute one normal mode command",
-    "",
-    "type to insert text"
-  },
-  ["visual"] = {
-    "`<Esc>` to exit visual mode",
-    "",
-    "`h/j/k/l` - Move cursor left, down, up, right",
-    "",
-    "`y` to yank (copy) the selected text",
-    "`d` to delete the selected text",
-    "`c` to change the selected text",
-    "`p` to paste the yanked text",
-  }
+	["insert"] = {
+		"`<Esc>` to exit insert mode",
+		"`<C-o>` to execute one normal mode command",
+		"`<C-w>` to delete the previous word",
+		"`<C-u>` to delete to the start of the line",
+		"`<C-h>` to delete one character backward",
+		"`<C-t>` to indent line (useful in auto-indented files)",
+		"`<C-d>` to un-indent line",
+		"",
+		"type to insert text"
+	},
+	["visual"] = {
+		"`<Esc>` to exit visual mode",
+		"",
+		"`h/j/k/l` - Move cursor left, down, up, right",
+		"",
+		"`y` to yank (copy) the selected text",
+		"`d` to delete the selected text",
+		"`c` to change the selected text",
+		"`p` to paste the yanked text",
+		"`>` to indent selected lines",
+		"`<` to un-indent selected lines",
+		"`gU` to make selected text uppercase",
+		"`gu` to make selected text lowercase",
+		"`:` to open command-line with `:'<,'>` range pre-filled",
+	}
 }
 
 function Tutor.open()
